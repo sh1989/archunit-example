@@ -1,0 +1,30 @@
+databaseChangeLog:
+  - objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+  - changeSet:
+      id: 2019-12-04
+      author: sh1989
+      changes:
+        - createTable:
+            tableName: user
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: username
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+        - insert:
+            columns:
+              - column:
+                  name: id
+                  value: 1
+              - column:
+                  name: username
+                  value: Sam Hogarth
+            tableName: user
